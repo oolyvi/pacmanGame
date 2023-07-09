@@ -11,7 +11,7 @@ import javax.swing.Timer;
 
 public class Model extends JPanel implements ActionListener {
 
-	private Dimension d;
+    private Dimension d;
     private final Font smallFont = new Font("Arial", Font.BOLD, 14);
     private boolean inGame = false;
     private boolean dying = false;
@@ -267,7 +267,6 @@ public class Model extends JPanel implements ActionListener {
                 }
             }
 
-            // Check for standstill
             if ((pacmand_x == -1 && pacmand_y == 0 && (ch & 1) != 0)
                     || (pacmand_x == 1 && pacmand_y == 0 && (ch & 4) != 0)
                     || (pacmand_x == 0 && pacmand_y == -1 && (ch & 2) != 0)
@@ -362,7 +361,7 @@ public class Model extends JPanel implements ActionListener {
 
         for (int i = 0; i < N_GHOSTS; i++) {
 
-            ghost_y[i] = 4 * BLOCK_SIZE; //start position
+            ghost_y[i] = 4 * BLOCK_SIZE; 
             ghost_x[i] = 4 * BLOCK_SIZE;
             ghost_dy[i] = 0;
             ghost_dx[i] = dx;
@@ -376,11 +375,11 @@ public class Model extends JPanel implements ActionListener {
             ghostSpeed[i] = validSpeeds[random];
         }
 
-        pacman_x = 7 * BLOCK_SIZE;  //start position
+        pacman_x = 7 * BLOCK_SIZE; 
         pacman_y = 11 * BLOCK_SIZE;
-        pacmand_x = 0;	//reset direction move
+        pacmand_x = 0;	
         pacmand_y = 0;
-        req_dx = 0;		// reset direction controls
+        req_dx = 0;		
         req_dy = 0;
         dying = false;
     }
@@ -408,7 +407,6 @@ public class Model extends JPanel implements ActionListener {
     }
 
 
-    //controls
     class TAdapter extends KeyAdapter {
 
         @Override
